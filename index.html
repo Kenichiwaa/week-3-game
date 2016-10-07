@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <title>Basic File</title>
+    </head>
+    
+    <div class="hello">
+    </div>
+    
+    <body>
+
+        <!-- Note the script tag here as well as the "text/javascript" -->
+        <script type="text/javascript">
+            
+
+                // Create an array that lists out all of the options
+            var wins = "0";
+            var guessesRemaning = 15;
+            var drivers = ['r', 'p', 's'];
+            var driverLetters;
+            var userGuess;
+            var computerInput = "zoo"
+
+            
+            console.log(computerInput);
+            
+            
+            // Captures Key Clicks
+            document.onkeyup = function(event) {
+
+                // Determines which exact key was selected. Make it lowercase
+                userInput = String.fromCharCode(event. keyCode).toLowerCase();
+
+                // Create code to randomly choose one of the drivers (Computer) 
+                computerInput = drivers[Math.floor(Math.random()*drivers)];
+            
+                // Making sure the user chooses r, p, or s
+                if ((userGuess == 'r') || (userGuess == 'p') || (userGuess == 's')){
+
+                    // It tests to determine if the computer or the user won the round and then increments
+                    if ((userGuess == 'r') && (computerGuess == 's')){
+                        wins++;
+                    }else if ((userGuess == 'r') && (computerGuess == 'p')){
+                        losses++;
+                    }else if ((userGuess == 's') && (computerGuess == 'r')){
+                        losses++;
+                    }else if ((userGuess == 's') && (computerGuess == 'p')){
+                        wins++;
+                    }else if ((userGuess == 'p') && (computerGuess == 'r')){
+                        wins++;
+                    }else if ((userGuess == 'p') && (computerGuess == 's')){
+                        losses++;
+                    }else if (userGuess == computerGuess){
+                        ties++;
+                    }
+                
+                document.getElementById("hello").innerHTML="<p>wins: </p>" + wins 
+                  
+                }
+            }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+        </script>
+    </body>
+</html>
