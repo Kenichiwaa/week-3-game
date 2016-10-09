@@ -19,62 +19,48 @@
         <script type="text/javascript">
             
 
-                // Create an array that lists out all of the options
+    // Create an array that lists out all of the options
+            // Tracks number of wins
             var wins = "0";
+            // Tracks number of losses 
             var guessesRemaning = 15;
-            var drivers = ['r', 'p', 's'];
+            // List of drivers
+            var drivers = ['Ron Artest', 'P Diddy', 'Sammuel Jackson'];
+            // Letters of each driver
             var driverLetters;
+            // User Guess
             var userGuess;
-            var computerInput = "zoo"
-
+            // Start the game
+            var startGame;
+            // Computer input
+            var computerInput='';
+            // computerInput calls on driver and selects random from list. 
+            var computerInput = drivers[Math.floor(Math.random()*drivers.length)];
+            //  startGame = function(){
+            //  console.log(computerInput);
+                driverLetters = computerInput;
+                // Displays the length of the computerInput word. 
+                console.log('poop');
+            // }
+                
+                
+                
+            // When user selects the correct letter from computer input.  
+            // The charAt() method returns the specified character from a string.
+                
+//            startGame(){               
+//            }
+            // Captures User Key Clicks
+//            document.onkeyup = function(event) {
+//
+//                // Determines which exact key was selected. Make it lowercase
+//                userInput = String.fromCharCode(event. keyCode).toLowerCase();
+//                console.log('you are here')
+                // Take drivers string and compare with user input
+                
             
-            console.log(computerInput);
-            
-            
-            // Captures Key Clicks
-            document.onkeyup = function(event) {
-
-                // Determines which exact key was selected. Make it lowercase
-                userInput = String.fromCharCode(event. keyCode).toLowerCase();
-
-                // Create code to randomly choose one of the drivers (Computer) 
-                computerInput = drivers[Math.floor(Math.random()*drivers)];
-            
-                // Making sure the user chooses r, p, or s
-                if ((userGuess == 'r') || (userGuess == 'p') || (userGuess == 's')){
-
-                    // It tests to determine if the computer or the user won the round and then increments
-                    if ((userGuess == 'r') && (computerGuess == 's')){
-                        wins++;
-                    }else if ((userGuess == 'r') && (computerGuess == 'p')){
-                        losses++;
-                    }else if ((userGuess == 's') && (computerGuess == 'r')){
-                        losses++;
-                    }else if ((userGuess == 's') && (computerGuess == 'p')){
-                        wins++;
-                    }else if ((userGuess == 'p') && (computerGuess == 'r')){
-                        wins++;
-                    }else if ((userGuess == 'p') && (computerGuess == 's')){
-                        losses++;
-                    }else if (userGuess == computerGuess){
-                        ties++;
-                    }
                 
-                document.getElementById("hello").innerHTML="<p>wins: </p>" + wins 
-                  
-                }
-            }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+              
                 
                 
                 
