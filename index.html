@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic File</title>
+</head>
+<body>
 
-        <title>Basic File</title>
-    </head>
-    
-    <div class="hello">
-    </div>
-    
-    <body>
+	<!-- Note the script tag here as well as the "text/javascript" -->
+	<script type="text/javascript">
 
-        <!-- Note the script tag here as well as the "text/javascript" -->
-        <script type="text/javascript">
-            
 
-    // Create an array that lists out all of the options
-            // Tracks number of wins
-            var wins = "0";
-            // Tracks number of losses 
-            var guessesRemaning = 15;
-            // List of drivers
-            var drivers = ['Ron Artest', 'P Diddy', 'Sammuel Jackson'];
-            // Letters of each driver
-            var driverLetters;
-            // User Guess
-            var userGuess;
-            // Start the game
-            var startGame;
-            // Computer input
-            var computerInput='';
-            // computerInput calls on driver and selects random from list. 
-            var computerInput = drivers[Math.floor(Math.random()*drivers.length)];
-            //  startGame = function(){
-            //  console.log(computerInput);
-                driverLetters = computerInput;
-                // Displays the length of the computerInput word. 
-                console.log('poop');
-            // }
-                
-                
-                
-            // When user selects the correct letter from computer input.  
-            // The charAt() method returns the specified character from a string.
-                
-//            startGame(){               
-//            }
-            // Captures User Key Clicks
-//            document.onkeyup = function(event) {
-//
-//                // Determines which exact key was selected. Make it lowercase
-//                userInput = String.fromCharCode(event. keyCode).toLowerCase();
-//                console.log('you are here')
-                // Take drivers string and compare with user input
-                
-            
-                
-              
-                
-                
-                
+			var underScore = [];
+			var names = ['ron artest', 'p diddy', 'sammuel jackson', 'abc']; // Pool of names
+            var computerInput = names[Math.floor(Math.random()*names.length)]; // Selects a random driver
+            var nameLetters = computerInput.split("").join(' '); // Creates an array of of letters with random driver
 
-        </script>
-    </body>
+
+
+            			// As long as i is less than nameLetters length, add 1 and loop. 
+	                    for (var i=0; i < nameLetters.length; i++) {
+             				underScore.push('_');
+                   			 }
+                   			var underScore = underScore.join(' ');
+ 
+
+
+    	document.onkeyup = function() {
+            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+		                   // Search letters of nameLetters selected by computerInput with key input userGuess
+		                   for 
+		                   (var j = 0; j < nameLetters.length; j++){
+		                   		if (userGuess == nameLetters[j])
+						underScore[j] = userGuess;
+							}
+        };
+
+		 console.log(nameLetters);
+         console.log(underScore);
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
 </html>
