@@ -5,41 +5,112 @@
 	<title>Basic File</title>
 </head>
 <body>
+<header>
+</header>
+
+<content>
+<div id="guess">
+</div>
+
+<div id="wins">
+</div>
+
+<h3>Current Word</h3>
+<div id="currentWord">
+</div>
+
+<h3>Number of guesses remaining</h3>
+<div id="numGuessRemain">
+</div>
+
+<h3>Letters already used</h3>
+<div id="ltrsAlrdyUsd">
+</div>
+
+</content>
+
+<footer>
+</footer>
+
 
 	<!-- Note the script tag here as well as the "text/javascript" -->
 	<script type="text/javascript">
 
+			var wins = 0;
+			var guessRemaining = 15;
+			var userLetters = []; // Letters typed in by ze user
+			var underScore = []; // array of selected driver replaced with underScores
+			var userGuess = '';
 
-			var underScore = [];
-			var names = ['ron artest', 'p diddy', 'sammuel jackson', 'abc']; // Pool of names
-            var computerInput = names[Math.floor(Math.random()*names.length)]; // Selects a random driver
-            var nameLetters = computerInput.split("").join(' '); // Creates an array of of letters with random driver
 
 
 
-            			// As long as i is less than nameLetters length, add 1 and loop. 
+			var names = ['ron artest', 'p diddy', 'sammuel jackson', 'abc']; // Ze List of le Names
+            var computerInput = names[Math.floor(Math.random()*names.length)]; // Computer selects a name
+            var nameLetters = computerInput.split("").join(' '); // Creates an array of of letters with the name
+
+
+            			// Display name as underscores
+            			// As long as i=0 is less than nameLetters length, add 1 and loop. 
 	                    for (var i=0; i < nameLetters.length; i++) {
-             				underScore.push('_');
+             	  			underScore.push('_');
                    			 }
                    			var underScore = underScore.join(' ');
- 
 
 
+        // On user key up, change user inupt to lower case 
     	document.onkeyup = function() {
             var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 		                   // Search letters of nameLetters selected by computerInput with key input userGuess
-		                   for 
-		                   (var j = 0; j < nameLetters.length; j++){
-		                   		if (userGuess == nameLetters[j])
-						underScore[j] = userGuess;
-							}
+		                   
+		                   for (var j = 0; j < nameLetters.length; j++){
+		                   		if (userGuess == nameLetters[j]) // if user input is the same as a letter the name
+								underScore[j] = userGuess; // then underscore of index letter that equals to user input
+													
+													// subtract 1 from guesses remaining ***
+													// add user input letter to user letters array and display **
+
+
+								console.log('true');
+								}
+							
+
+			userLetters.push(userGuess);
+
         };
 
 		 console.log(nameLetters);
          console.log(underScore);
 
+document.getElementById('guess').innerHTML = userGuess;
+document.getElementById('wins').innerHTML = '<p>Wins: ' + wins;
+document.getElementById('currentWord').innerHTML = underScore;
+document.getElementById('numGuessRemain').innerHTML = guessRemaining;
+document.getElementById('ltrsAlrdyUsd').innerHTML = userLetters;
 
+
+         // Start Game
+        // document.getElementById('title').innerHTML = title;
+        // title = ['<h1>Fire Pokemon</h2>'];
+
+        //  // Select random driver
+
+        //  var characters =['pikachu', 'charizard'];
+
+        //  var randomNumber = Math.floor(Math.random()*characters.length);
+
+         // Display driver as underscores
+
+         // If user input = an index in the array of the random driver, change same index of underscore to that letter. 
+
+         // If user selects all of the letters, alert they won. 
+
+         // Display user input attempts on screen
+
+         // Disply lives remaining. If lives end, end game.
+
+         // End Game.
 
 
 
