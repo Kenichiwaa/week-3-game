@@ -9,3 +9,14 @@
 @media only screen and (min-width: 1024px){
     /* styles for desktop plus */
 }
+
+        body {
+ 
+        }
+        .heading {
+            background: #ADD8E6;
+            border: 1px solid #000;
+        }
+        .mainstuff {
+            border: 1px solid #000;
+        }
